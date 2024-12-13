@@ -34,13 +34,6 @@ CheckMATE is powered by three CNN-based machine learning models:
 - **Model Training**: Trained the models with transfer learning and evaluated them using a confusion matrix.  
 - **Optimization**: Utilized regularization, dropout, and a flatten layer to improve model performance.  
 
-## Deployment  
-CheckMATE leverages Google Cloud Platform to ensure efficient and scalable cloud computing:  
-- **Cloud Run**: Hosts the CheckMATE API for features like authentication, face detection, mood analysis, and school attribute recognition.  
-- **Cloud Storage**: Securely stores user data, including profiles and photos.  
-- **Cloud SQL**: Efficiently manages structured data.  
-- **TensorFlow Lite**: Converts models for mobile deployment.  
-
 ## Advantages  
 - **Efficiency**: Powered by cloud technology to save resources.  
 - **Accuracy**: Well-trained models deliver reliable results for student and school attribute detection.  
