@@ -1,17 +1,49 @@
-# Machine Learning  
-**CheckMATE Learning Path Documentation**  
+# CheckMATE Learning Path Documentation  
 
-CheckMATE is an application designed for school environments. It serves as a smart attendance system, school attribute checker, and mood tracker for all students. CheckMATE aims to assist teachers and parents in monitoring student discipline effectively.  
+**CheckMATE** is an innovative machine learning application designed to enhance school environments. With features such as smart attendance tracking, school attribute detection, and mood tracking, CheckMATE supports teachers and parents in monitoring student discipline effectively.  
 
-The CheckMATE application is built with three machine learning model architectures, all based on the CNN algorithm:  
+## Key Features  
+- **Attendance Tracking**: Recognizes student faces for automated attendance.  
+- **School Attribute Checker**: Ensures students wear proper school attire, such as ties.  
+- **Mood Tracking**: Monitors student facial expressions to understand their moods.  
 
-1. **Model1_Attendance**  
-   The `TF100.keras` model is designed for student attendance tracking and consists of four classes: Liza, Nabila, Zain, and NoFace. This model utilizes the pre-trained MobileNetV2, where the final layers are fine-tuned for retraining. The dataset was created independently by capturing personal photos with an equal number of images for each class.  
+## Models Used  
+CheckMATE is powered by three CNN-based machine learning models:  
 
-2. **Model2_Tie**  
-   The `dasidasi.keras` model detects school attributes, specifically ties, with a binary output (wearing a tie or not wearing a tie). This model employs the MobileNetV2 pre-trained model with all layers retrained. The dataset was created independently by capturing personal photos with an equal number of images for each class.  
+1. **Attendance Model**  
+   - Model: `TF100.keras`  
+   - Categories: 4 classes (Liza, Nabila, Zain, NoFace)  
+   - Algorithm: Transfer learning with MobileNetV2, fine-tuned on the final layers.  
+   - Dataset: Custom-made with balanced photos across all classes.  
 
-3. **Model3_Expression**  
-   The `ekspresi.keras` model classifies four expressions: happy, sad, neutral, and angry. It was developed using a simple CNN architecture without a pre-trained model. The dataset was sourced from the FER2013 dataset on Kaggle, which originally contained seven expressions.  
+2. **School Attribute Model**  
+   - Model: `dasidasi.keras`  
+   - Categories: 2 classes (Wearing a Tie, Not Wearing a Tie)  
+   - Algorithm: Transfer learning with MobileNetV2, retrained on all layers.  
+   - Dataset: Custom-made with balanced photos for each class.  
 
-These models collectively enable CheckMATE to provide robust functionality, enhancing the school monitoring system with intelligent machine learning solutions.
+3. **Mood Tracker Model**  
+   - Model: `ekspresi.keras`  
+   - Categories: 4 expressions (Happy, Sad, Neutral, Angry)  
+   - Algorithm: A simple CNN without a pre-trained model.  
+   - Dataset: FER2013 from Kaggle (converted from 7 expressions to 4).  
+
+## Development Process  
+- **Dataset Preparation**: Collected custom photos and cleaned the data to ensure quality.  
+- **Data Augmentation**: Applied augmentation techniques to expand the dataset.  
+- **Model Training**: Trained the models with transfer learning and evaluated them using a confusion matrix.  
+- **Optimization**: Utilized regularization, dropout, and a flatten layer to improve model performance.  
+
+## Deployment  
+CheckMATE leverages Google Cloud Platform to ensure efficient and scalable cloud computing:  
+- **Cloud Run**: Hosts the CheckMATE API for features like authentication, face detection, mood analysis, and school attribute recognition.  
+- **Cloud Storage**: Securely stores user data, including profiles and photos.  
+- **Cloud SQL**: Efficiently manages structured data.  
+- **TensorFlow Lite**: Converts models for mobile deployment.  
+
+## Advantages  
+- **Efficiency**: Powered by cloud technology to save resources.  
+- **Accuracy**: Well-trained models deliver reliable results for student and school attribute detection.  
+- **User-Friendly**: Designed for seamless integration into everyday school activities.  
+
+We hope CheckMATE becomes a practical solution for improving student discipline and streamlining school management. Let’s create a better learning environment with CheckMATE!  
